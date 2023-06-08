@@ -1,49 +1,50 @@
 public class Main {
     public static void main(String[] args) {
 
-        int clientOS = 0;
-        if (clientOS == 0) {
+        int clientOS = 2;
+        int iOS = 0;
+        int android = 1;
+        if (clientOS == iOS) {
             System.out.println("Установите версию приложения для iOS по ссылке");
-        } else {
+        } else if (clientOS == android){
             System.out.println("Установите версию приложения для Android по ссылке");
-        }
+        } else {
+            System.out.println("Несовместимая операционная система");}
 
-        int clientOS1 = 1;
-        int clientDeviceYear = 2015;
-        if (clientOS1 == 0) {
-            if (clientDeviceYear <= 2015) {
-                System.out.println("Установите  облегченную версию приложения для iOS по ссылке");
+        int clientOS1 = 2;
+        int year1 = 2015;
+        int iOS1 = 0;
+        int android1 = 1;
+        int clientDeviceYear = 2016;
+        if (clientOS1 == iOS1) { if (clientDeviceYear >= year1) {
+                System.out.println("Установите версию приложения для iOS по ссылке");} else {
+                System.out.println("Установите  облегченную версию приложения для iOS по ссылке");}
+            } else if (clientOS1 == android1) { if (clientDeviceYear >= year1) {
+                System.out.println("Установите версию приложения для Android по ссылке");} else {
+                System.out.println("Установите  облегченную версию приложения для Android по ссылке");}
             } else {
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            }
-        } else if (clientDeviceYear <= 2015) {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else {
-            System.out.println("Установите версию приложения для Android по ссылке");
+            System.out.println("Несовместимая операционная система");
         }
 
         int year = 2021;
-        boolean uslovie2 = ((year % 100 == 0) && year % 400 != 0);
-        if (year % 4 != 0 || uslovie2) {
-            System.out.println(+year + " год не является високосным");
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            System.out.println(+year + " год  является високосным");
         } else {
-            System.out.println(+year + " год високосный");
+            System.out.println(+year + " год не високосный");
         }
 
         int deliveryDistance = 95;
-        boolean usl1 = deliveryDistance <= 20;
-        boolean usl2 = (deliveryDistance > 20 && deliveryDistance < 60);
-        boolean usl3 = (deliveryDistance >= 60 && deliveryDistance <= 100);
         int deliveryTime = 1;
-        if (usl1) {
+        if (deliveryDistance <= 20) {
             System.out.println("Потребуется дней: " + deliveryTime);
-        } else if (usl2) {
+        } else if (deliveryDistance > 20 && deliveryDistance < 60) {
             deliveryTime = deliveryTime + 1;
             System.out.println("Потребуется дней: " + deliveryTime);
-        } else if (usl3) {
+        } else if (deliveryDistance >= 60 && deliveryDistance <= 100) {
             deliveryTime = deliveryTime + 2;
             System.out.println("Потребуется дней: " + deliveryTime);
-        } else {System.out.println("Свыше 100 км доставки нет");}
+        } else {
+            System.out.println("Свыше 100 км доставки нет");}
 
         int monthNumber = 12;
         switch (monthNumber) {
